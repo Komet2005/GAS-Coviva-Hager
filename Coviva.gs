@@ -143,7 +143,7 @@ function sendParamToTRM(username, password, koala, device_hardware_id, node_numb
   var basic_auth = "Basic " + new_encoded;
   // Logger.log(basic_auth);
 
-  // order to send (not yet validade - beta version)
+  // order to send
   var order = "put:nodes/" + node_number + "/attributes/" + attribute_number + "?target_value=" + value_number;
   Logger.log(order);
 
