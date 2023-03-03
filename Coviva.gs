@@ -170,7 +170,7 @@ function sendParamToTRM(username, password, koala, device_hardware_id, node_numb
     "device_type": "4",
     "device_os": "6",
     "device_app": "4",
-    // "post": order
+    "post": order
   };
 
   var options = {
