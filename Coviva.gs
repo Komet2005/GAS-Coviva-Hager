@@ -114,8 +114,8 @@ function getAccesToken(username, password, koala, device_hardware_id) {
 // device_hardware_id: mac address of your id - Work also with the conversion of the mac address in hex
 
 // node_number: number of the node in coviva hub
-// attribute_number: attribute need for the node
-// value_number: 0 would turn off the node number if it is a light / 1 would turn it on
+// attribute_number: attribute of the node
+// value_number: if it's a light 0 would turn off the node number / 1 would turn it on
 
 // function used to post an order to your Hub Coviva
 function sendParamToTRM(username, password, koala, device_hardware_id, node_number, attribute_number, value_number) {
