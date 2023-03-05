@@ -5,7 +5,7 @@
 // device_hardware_id : mac address of your id
 
 // function used to get an access with the acces token of your Hub Coviva
-function useCovivaAccesToken(acces_token) {
+function useCovivaAccesToken(acces_token, device_hardware_id) {
 
   Logger.log("Using access token");
 
