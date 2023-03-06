@@ -7,4 +7,4 @@ To be connect to a your Coviva Hub, you need to use your CovivaId, username and 
 
 **Credits**
 
-The code is based on @tylerrmit/homebridge-coviva-hager adapted to use for this Google Apps Script (GAS) plugin.
+The code is based on @tylerrmit/homebridge-coviva-hager and have been adapted to be use as Google Apps Script (GAS) plugin.
