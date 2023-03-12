@@ -37,11 +37,11 @@ function useCovivaAccesToken(acces_token, device_hardware_id) {
     "payload": payload
   };
 
-  var responseSendCommand = UrlFetchApp.fetch(url, options);
-  // Logger.log("responseSendCommand: " + response.getResponseCode());
+  var responseUseToken = UrlFetchApp.fetch(url, options);
+  // Logger.log("responseUseToken: " + responseUseToken.getResponseCode());
 
-  if (responseSendCommand.getResponseCode() == 200) {
-    var ascii_content = responseSendCommand.getContentText();
+  if (responseUseToken.getResponseCode() == 200) {
+    var ascii_content = responseUseToken.getContentText();
     // Logger.log(ascii_content);
 
     var fields_and_values = ascii_content.split("&");
