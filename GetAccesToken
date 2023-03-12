@@ -64,7 +64,7 @@ function getCovivaAccesToken(username, password, koala, device_hardware_id) {
   };
 
   var responseGetToken = UrlFetchApp.fetch(url, options);
-  // Logger.log("responseGetToken: " + response.getResponseCode());
+  // Logger.log("responseGetToken: " + responseGetToken.getResponseCode());
 
   if (responseGetToken.getResponseCode() == 200) {
     var ascii_content = responseGetToken.getContentText();
