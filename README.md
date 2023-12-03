@@ -1,5 +1,5 @@
 # GAS-Coviva-Hager
-Google Apps Script (GAS) for Google Sheet plugin for Hager Coviva devices (unofficial) 
+ Google Apps Script (GAS) in Google Sheet for Hager Coviva devices (unofficial) 
 
 **Features**
 
