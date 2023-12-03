@@ -3,7 +3,7 @@
 
 **Features**
 
-To be connect to a your Coviva Hub, you need to create a Google Sheet with your CovivaId, username and password (the covivaId is the same detail you use when logging into the phone app. It's a short hexadecimal string that represents your site or Coviva hub).
+To be connect to a your Coviva Hub, you need to create a sheet in Google Sheet with your CovivaId, username and password (the covivaId is the same detail you use when logging into the phone app. It's a short hexadecimal string that represents your site or Coviva hub).
 
 **Credits**
 
