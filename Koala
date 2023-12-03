@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+
+<head>
+  <link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <style>
+    body {
+      margin: 12px;
+    }
+  </style>
+
+  <script language="javascript" type="text/javascript">
+    
+  function initNewWebSocket(wsUriToUse){
+    var wsUri = (wsUriToUse);
+    websocket = new WebSocket(wsUri,subprotocols = ['v2']);
+    websocket.onopen = function(evt) { onOpen(evt) };
+    websocket.onclose = function(evt) { onClose(evt) };
+    websocket.onmessage = function(evt) { onMessage(evt) };
+    websocket.dosend = function(evt) { doSend(evt) };
+    websocket.onerror = function(evt) { onError(evt) };
+  }
+
+  function initMyParam(myparams){
+    // doSend("GET:all");
+    // doSend("GET:nodes");
+    // doSend("Ping");
+    // "PUT:nodes/" + node_number + "/attributes/" + attribute_number + "?target_value=" + value_number;
+    doSend("PUT:nodes/" + myparams[1] + "/attributes/" + myparams[3] + "?target_value=" + myparams[5]);
+  }
+
+  function init()  {
+    google.script.run.withSuccessHandler(initNewWebSocket).getwsUriFromSheet();
+  }
+
+  function onOpen(evt)  {
+    writeLog("Connected to MyCoviva");
+    google.script.run.withSuccessHandler(initMyParam).param();
+  }
+
+  function onClose(evt)  {
+    google.script.run.getJSON(evt.data);
+    writeLog("Disconnected from MyCoviva"); 
+  }
+
+  function onMessage(evt)  {
+    writeLog(evt.data);
+    google.script.run.getJSON(evt.data); 
+  }
+
+  function onError(evt)  {
+    writeLog('<span style="color: red;">ERROR:</span> ' + evt.data);
+  }
+
+  function doSend(message)  {
+    websocket.send(message);
+    writeLog("Sent: " + message);
+  }
+
+  function writeLog(message)  {
+    var pre = document.createElement("p");
+    pre.style.wordWrap = "break-word";
+    pre.innerHTML = message;
+    document.getElementById("log").appendChild(pre);
+  }
+
+  window.addEventListener("load", init, false);
+  window.addEventListener("beforeunload", websocket.close, false);
+  
+  </script>
+</head>
+
+<body>
+  <div id="lastButtonBlock" class="block">
+    <button onclick="init()" class ="action button actionButton" >&nbsp;Connect&nbsp;</button>
+    <button onclick="websocket.close()" class ="action button actionButton" >&nbsp;Disconnect&nbsp;</button>
+    <button onclick="google.script.host.close()" class ="create deleteButton actionButton" >&nbsp;Close&nbsp;</button>
+  </div><br>
+  <div id="log"></div><br>
+</body>
+
+</html>
