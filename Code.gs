@@ -37,7 +37,6 @@ function onOpen(e) {
   }
 
 function showSidebar(){
-  var wsUritoUse = getwsUriFromSheet();
   var html = HtmlService
     .createTemplateFromFile("Koala")
     .evaluate()
