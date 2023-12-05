@@ -11,17 +11,17 @@ var data = sheet.getDataRange().getValues();
 var koala = data[1][1];
 
 // username: login to mycoviva
-var username = data[1][2];
+var username = data[1][1];
 
 // password: password for mycoviva
-var password = data[1][3];
+var password = data[1][2];
 
 // device_hardware_id : mac address of your id
-var device_hardware_id = data[1][4];
+var device_hardware_id = data[1][3];
 
-var node_number = data[1][5];
-var value_number = data[1][6];
-var attribute_number = data[1][7];
+var node_number = data[1][4];
+var value_number = data[1][5];
+var attribute_number = data[1][6];
 
 function getwsUriFromSheet(){
   var acces_token = getCovivaAccesToken(username, password, koala, device_hardware_id);
