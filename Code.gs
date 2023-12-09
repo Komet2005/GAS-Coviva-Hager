@@ -8,7 +8,7 @@ var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(CovivaSheetName
 var data = sheet.getDataRange().getValues();
 
 // koala: CovivaId
-var koala = data[1][1];
+var koala = data[1][0];
 
 // username: login to mycoviva
 var username = data[1][1];
